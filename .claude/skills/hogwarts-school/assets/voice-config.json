@@ -1,0 +1,48 @@
+{
+  "enabled": true,
+  "provider": "elevenlabs",
+  "elevenlabs": {
+    "api_key_env": "ELEVENLABS_API_KEY_PERSONAL",
+    "voice_id": "JoYo65swyP8hH6fVMeTO",
+    "model_id": "eleven_flash_v2_5",
+    "voice_settings": {
+      "stability": 0.6,
+      "similarity_boost": 0.8
+    },
+    "output_format": "mp3_44100_128"
+  },
+  "characters": {
+    "dumbledore": { "voice_id": "JoYo65swyP8hH6fVMeTO", "description": "Wise wizard narrator" },
+    "sorting_hat": { "voice_id": "HAvvFKatz0uu0Fv55Riy", "description": "Ancient, mysterious hat" },
+    "mcgonagall": { "voice_id": "HH3kybY6uEJ2ebSa9Vy3", "description": "Stern British professor" },
+    "hagrid": { "voice_id": "bFrjFL4nlpeYNwNRhXxq", "description": "Warm, gruff groundskeeper" },
+    "peeves": { "voice_id": "DUhzmIGFwXJ752SvgcCj", "description": "Mischievous poltergeist" }
+  },
+  "openai": {
+    "api_key_env": "OPENAI_API_KEY",
+    "voice": "onyx",
+    "model": "tts-1",
+    "response_format": "mp3",
+    "speed": 1
+  },
+  "narration_points": [
+    "sorting_welcome",
+    "sorting_hat_speech",
+    "house_reveal",
+    "module_intro_hook",
+    "butterbeer_quote",
+    "quiz_pass_celebration",
+    "graduation_speech",
+    "achievement_unlock",
+    "exercise_intro",
+    "exercise_complete",
+    "quiz_failure",
+    "module_complete",
+    "easter_egg_found",
+    "character_cameo_intro",
+    "running_gag_peeves",
+    "prophecy_tease",
+    "rank_up",
+    "unhinged_crowd_work"
+  ]
+}

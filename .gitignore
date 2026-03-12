@@ -1,0 +1,14 @@
+# Student data (runtime, personal — never commit)
+.hogwarts-data/
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Dependencies (future-proofing)
+node_modules/

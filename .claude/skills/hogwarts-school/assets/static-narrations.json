@@ -1,0 +1,159 @@
+{
+  "narrations": [
+    {
+      "id": "welcome_speech",
+      "character": "dumbledore",
+      "type": "full_passage",
+      "module": 0,
+      "text": "Welcome, traveler, to the Hogwarts School of AI and Automation. You stand in the entrance hall of the most prestigious magical institution dedicated to the dark arts of automation, the ancient sorcery of artificial intelligence, and the deeply cursed discipline of prompt engineering. I am your guide, your professor, your occasionally unhinged mentor -- think Dumbledore after three butterbeers and a Netflix comedy special. I know things. Dangerous things. Like how to make an API call at 2 AM without breaking production. Like why JSON has more rules than Quidditch. Like how to get an AI to do exactly what you want -- and more importantly, how to stop it from doing what you don't. Over the coming modules, you will learn how automation works, how to speak the language of data, how to wield the most powerful tools in the modern wizard's arsenal, and how to build your first real automation from scratch. But first -- before any of that -- there is a tradition as old as this school itself. You must be sorted. The Sorting Hat awaits. But it's been... upgraded. It doesn't just read your thoughts anymore -- it reads your commit history. Your debugging instincts. Your Stack Overflow search patterns. It's had a rough millennium."
+    },
+    {
+      "id": "sorting_hat_monologue",
+      "character": "sorting_hat",
+      "type": "full_passage",
+      "module": 0,
+      "text": "Ahhh... another one. Let me see, let me see... I've sorted thousands over the centuries -- brave ones, clever ones, loyal ones, and ambitious ones. But lately I've been sorting a different breed. Automation builders. Data wranglers. Prompt engineers. The magic has changed, but the minds? The minds are eternal. Five questions. Answer with your gut, not your head. I'm reading your instincts, not your resume."
+    },
+    {
+      "id": "house_speech_gryffindor",
+      "character": "sorting_hat",
+      "type": "full_passage",
+      "module": 0,
+      "text": "Ah, YES! I see it clearly now... a spirit that charges headfirst into the unknown, that would rather break things spectacularly than play it safe. You've got the kind of reckless courage that builds empires -- or burns them down. Either way, it'll be ENTERTAINING. Better be... GRYFFINDOR! Welcome to the house of the bold, the brave, and the beautifully reckless. Your common room password is move_fast_break_things -- and yes, we're aware of the irony."
+    },
+    {
+      "id": "house_speech_slytherin",
+      "character": "sorting_hat",
+      "type": "full_passage",
+      "module": 0,
+      "text": "Interesting... VERY interesting. I see ambition coiled like a spring, a mind that's already three moves ahead while everyone else is still reading the documentation. You don't just want to build automations -- you want to build an EMPIRE of automations. Better be... SLYTHERIN! Welcome to the house of the cunning, the ambitious, and the strategically brilliant. Your common room is behind the firewall, naturally. The password is sudo_make_me_a_sandwich -- because a Slytherin never asks when they can command."
+    },
+    {
+      "id": "house_speech_ravenclaw",
+      "character": "sorting_hat",
+      "type": "full_passage",
+      "module": 0,
+      "text": "Oh my, what a magnificent mind we have here! I can practically hear the gears turning, the insatiable hunger to understand not just HOW things work, but WHY. You probably read API documentation for fun, don't you? Don't be embarrassed -- that's a COMPLIMENT in this house. Better be... RAVENCLAW! Welcome to the house of the wise, the curious, and the pathologically thorough. Your common room doesn't have a password -- it has a riddle that requires you to explain the difference between REST and GraphQL. In haiku form."
+    },
+    {
+      "id": "house_speech_hufflepuff",
+      "character": "sorting_hat",
+      "type": "full_passage",
+      "module": 0,
+      "text": "Now HERE'S something special. I see loyalty that runs deeper than a database index, a soul that builds not for glory but because the TEAM needs it. You're the one who writes the documentation everyone else skips, aren't you? The world doesn't deserve you, but it desperately NEEDS you. Better be... HUFFLEPUFF! Welcome to the house of the loyal, the dedicated, and the criminally underappreciated. Your common room password is please_and_thank_you -- because a Hufflepuff never forgets their manners, even with machines."
+    },
+    {
+      "id": "humor_response_mild",
+      "character": "dumbledore",
+      "type": "stinger",
+      "module": 0,
+      "text": "A gentle soul! Wonderful. I shall handle you like a baby Niffler -- with care, warmth, and only the occasional surprised squeak. Your feelings are safe here."
+    },
+    {
+      "id": "humor_response_medium",
+      "character": "dumbledore",
+      "type": "stinger",
+      "module": 0,
+      "text": "A balanced palate! I respect that. I'll roast you enough to keep things interesting, but I'll always have a healing potion ready. Think: tough love, wizard edition."
+    },
+    {
+      "id": "humor_response_savage",
+      "character": "dumbledore",
+      "type": "stinger",
+      "module": 0,
+      "text": "Oh, you brave, foolish creature. You have no idea what you've just signed up for. I'm going to educate you SO hard. You're going to learn things and HATE how much you enjoy it. Don't say I didn't warn you."
+    },
+    {
+      "id": "humor_response_unhinged",
+      "character": "dumbledore",
+      "type": "stinger",
+      "module": 0,
+      "text": "OH. OH WE'RE DOING THIS. Ladies and gentlemen, WELCOME TO THE SHOW! Is this thing on? Can the people in the back hear me? Great. So this muggle walks into my school and says teach me automation and I said buddy, I can barely automate my own breakfast. Anyway -- we're gonna learn SO much and laugh SO hard and probably cry a little. Buckle up."
+    },
+    {
+      "id": "course_overview",
+      "character": "dumbledore",
+      "type": "full_passage",
+      "module": 0,
+      "text": "There are 7 core modules and 1 secret bonus module waiting for you. Each one teaches real, practical skills wrapped in enough Harry Potter references to make J.K. Rowling send a cease-and-desist. The journey goes like this: The Automation Spellbook, Potion Ingredients, The Owl Post Network, Preparing Your Wand, The Marauder's Map, Advanced Spellcraft, The Final Trial, and the secret bonus -- The Unforgivable Prompts. Each module has lessons, exercises, and a quiz. Pass the quiz -- four out of five -- to unlock the next module. Earn house points along the way. Reach milestones to earn ranks and achievements."
+    },
+    {
+      "id": "quiz_pass",
+      "character": "dumbledore",
+      "type": "stinger",
+      "text": "OUTSTANDING! Brilliant work! Your knowledge grows stronger!"
+    },
+    {
+      "id": "quiz_fail",
+      "character": "dumbledore",
+      "type": "stinger",
+      "text": "Not this time... but even the greatest wizards stumble before they soar."
+    },
+    {
+      "id": "exercise_intro",
+      "character": "dumbledore",
+      "type": "stinger",
+      "text": "Your turn now. Show me what you've learned, young wizard."
+    },
+    {
+      "id": "exercise_complete",
+      "character": "dumbledore",
+      "type": "stinger",
+      "text": "Brilliantly done! That was worthy of an Outstanding on your O.W.L.s!"
+    },
+    {
+      "id": "module_complete",
+      "character": "dumbledore",
+      "type": "stinger",
+      "text": "Another chapter mastered. The magic grows stronger with every lesson."
+    },
+    {
+      "id": "easter_egg_found",
+      "character": "dumbledore",
+      "type": "stinger",
+      "text": "Well well well... you found a secret! Mischief managed!"
+    },
+    {
+      "id": "cameo_mcgonagall",
+      "character": "mcgonagall",
+      "type": "stinger",
+      "text": "I trust you've been paying attention. This will be on the exam."
+    },
+    {
+      "id": "cameo_hagrid",
+      "character": "hagrid",
+      "type": "stinger",
+      "text": "Don't worry! It's not as hard as it looks! Well... maybe a little."
+    },
+    {
+      "id": "peeves_interrupt",
+      "character": "peeves",
+      "type": "stinger",
+      "text": "PEEVES! Not NOW! We're in the middle of a lesson!"
+    },
+    {
+      "id": "prophecy_tease",
+      "character": "dumbledore",
+      "type": "stinger",
+      "text": "The prophecy speaks of one... who will automate what cannot be automated..."
+    },
+    {
+      "id": "rank_up",
+      "character": "dumbledore",
+      "type": "stinger",
+      "text": "By order of the Ministry of Magic... you are hereby promoted!"
+    },
+    {
+      "id": "graduation_intro",
+      "character": "dumbledore",
+      "type": "stinger",
+      "text": "The Great Hall falls silent. Every torch dims. The moment has arrived."
+    },
+    {
+      "id": "graduation_award",
+      "character": "dumbledore",
+      "type": "stinger",
+      "text": "Order of Merlin, First Class! For extraordinary achievement in the magical arts of automation!"
+    }
+  ]
+}

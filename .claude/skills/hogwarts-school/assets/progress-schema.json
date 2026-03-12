@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hogwarts Student Progress",
+  "description": "Schema for tracking student progress through Hogwarts School of AI and Automation",
+  "type": "object",
+  "required": ["student", "progress", "house_points", "achievements", "session_history", "statistics", "settings"],
+  "properties": {
+    "student": {
+      "type": "object",
+      "required": ["nickname", "house", "sorting_date", "humor_level", "experience_level"],
+      "properties": {
+        "nickname": { "type": "string", "minLength": 1 },
+        "house": { "type": "string", "enum": ["Gryffindor", "Slytherin", "Ravenclaw", "Hufflepuff"] },
+        "sorting_date": { "type": "string", "format": "date-time" },
+        "humor_level": { "type": "string", "enum": ["mild", "medium", "savage", "unhinged"] },
+        "experience_level": { "type": "string", "enum": ["muggle", "squib", "halfblood", "pureblood"] }
+      },
+      "additionalProperties": false
+    },
+    "progress": {
+      "type": "object",
+      "required": ["current_module", "current_lesson", "modules"],
+      "properties": {
+        "current_module": { "type": "integer", "minimum": 0, "maximum": 8 },
+        "current_lesson": { "type": "integer", "minimum": 1 },
+        "modules": {
+          "type": "object",
+          "patternProperties": {
+            "^[0-8]$": {
+              "type": "object",
+              "required": ["status", "started_at", "completed_at", "lessons_completed", "quiz", "exercises"],
+              "properties": {
+                "status": { "type": "string", "enum": ["not_started", "in_progress", "completed"] },
+                "started_at": { "type": ["string", "null"], "format": "date-time" },
+                "completed_at": { "type": ["string", "null"], "format": "date-time" },
+                "lessons_completed": {
+                  "type": "array",
+                  "items": { "type": "integer", "minimum": 1 }
+                },
+                "quiz": {
+                  "type": "object",
+                  "required": ["passed", "attempts", "best_score"],
+                  "properties": {
+                    "passed": { "type": "boolean" },
+                    "attempts": { "type": "integer", "minimum": 0 },
+                    "best_score": { "type": "integer", "minimum": 0, "maximum": 5 }
+                  },
+                  "additionalProperties": false
+                },
+                "exercises": {
+                  "type": "object",
+                  "required": ["completed", "skipped"],
+                  "properties": {
+                    "completed": { "type": "array", "items": { "type": "string" } },
+                    "skipped": { "type": "array", "items": { "type": "string" } }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "house_points": {
+      "type": "object",
+      "required": ["total", "breakdown"],
+      "properties": {
+        "total": { "type": "integer", "minimum": 0 },
+        "breakdown": {
+          "type": "object",
+          "properties": {
+            "quiz_correct": { "type": "integer", "minimum": 0 },
+            "quiz_perfect": { "type": "integer", "minimum": 0 },
+            "exercises": { "type": "integer", "minimum": 0 },
+            "module_completion": { "type": "integer", "minimum": 0 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "achievements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "unlocked_at"],
+        "properties": {
+          "id": { "type": "string" },
+          "unlocked_at": { "type": "string", "format": "date-time" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "session_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["date", "duration_minutes", "modules_touched"],
+        "properties": {
+          "date": { "type": "string", "format": "date-time" },
+          "duration_minutes": { "type": "integer", "minimum": 0 },
+          "modules_touched": { "type": "array", "items": { "type": "integer" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "settings": {
+      "type": "object",
+      "properties": {
+        "play_cached_audio": { "type": "boolean", "default": true },
+        "dynamic_voice_api": { "type": "boolean", "default": false }
+      },
+      "additionalProperties": false
+    },
+    "statistics": {
+      "type": "object",
+      "required": ["total_sessions", "graduation_date"],
+      "properties": {
+        "total_sessions": { "type": "integer", "minimum": 0 },
+        "graduation_date": { "type": ["string", "null"], "format": "date-time" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
