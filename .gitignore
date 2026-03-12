@@ -1,6 +1,9 @@
 # Student data (runtime, personal — never commit)
 .hogwarts-data/
 
+# Auto-fetched skills (downloaded at runtime by hogwarts-setup.js)
+.claude/skills/skill-creator/
+
 # Environment / secrets
 .env
 .env.local

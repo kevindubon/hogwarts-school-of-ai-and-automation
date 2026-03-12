@@ -28,6 +28,8 @@
 
 **Prerequisites:** Module 5 quiz passed (The Marauder's Map — MCP Universe)
 
+**Tool:** Anthropic's official **skill-creator** skill is auto-installed by the setup script at `.claude/skills/skill-creator/`. Students can use `/skill-creator` to get AI-assisted help building, testing, and iterating on their skills. Mention this when students start the BUILD exercise in Lesson 4.
+
 ---
 
 ## Lesson 1: What Are Claude Skills? (Inventing New Spells)
@@ -532,6 +534,7 @@ If you want, create `references/api-endpoints.md` with the full endpoint documen
 - I WILL review what you create and give feedback.
 - Start with Step 1 and Step 2. Share your SKILL.md when you've written it.
 - It doesn't need to be perfect — we'll iterate in the next lesson.
+- **Pro tip:** Anthropic's official **skill-creator** is installed at `.claude/skills/skill-creator/`. If you want AI-assisted help building and testing your skill, you can use `/skill-creator` — it'll walk you through the process, help you write test cases, and run evals. Think of it as having Ollivander guiding your wand-crafting.
 
 **Hints if you're stuck:**
 - Look back at the SKILL.md examples from this lesson and Lesson 2
