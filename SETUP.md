@@ -17,60 +17,87 @@ reinstall things that already work.
 
 STEP 1: DETECT MY SYSTEM
 - Determine if I'm on Windows, macOS, or Linux.
-- Print what you detect so I can confirm.
+- Print what you detect so I can confirm before continuing.
 
 STEP 2: CHECK AND INSTALL GIT
 - Run: git --version
 - If Git is installed, print the version and move on.
 - If NOT installed:
-  - macOS: Run "xcode-select --install"
-  - Windows: Install Git for Windows from https://git-scm.com/downloads/win
-    (use winget if available: winget install Git.Git)
-  - Linux: Run "sudo apt install git" (or equivalent for the distro)
-- Verify after install: git --version
+  - macOS: Run "xcode-select --install" (this opens a system dialog — tell me
+    to click Install and wait for it to finish, then verify)
+  - Windows: Run "winget install Git.Git" if winget is available.
+    If winget is not available, tell me to download Git from
+    https://git-scm.com/downloads/win and install it manually, then come back.
+  - Linux: Tell me to run "sudo apt install git" myself (you can't enter my
+    password). Wait for me to confirm it's done.
+- After install, verify: git --version
+- If the command still isn't found, tell me to close and reopen my terminal
+  (or restart the IDE) so the PATH updates, then try again.
 
 STEP 3: CHECK AND INSTALL NODE.JS (18+)
 - Run: node --version
 - If Node.js 18+ is installed, print the version and move on.
 - If NOT installed or version is below 18:
-  - macOS: Run "brew install node" (or download from https://nodejs.org/)
-  - Windows: Run "winget install OpenJS.NodeJS.LTS" (or download from https://nodejs.org/)
-  - Linux: Run "curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -"
-    then "sudo apt install -y nodejs"
-- Verify after install: node --version
+  - macOS: Run "brew install node". If brew is not installed, tell me to
+    install Homebrew first (https://brew.sh) or download Node from
+    https://nodejs.org/
+  - Windows: Run "winget install OpenJS.NodeJS.LTS". If winget is not
+    available, tell me to download from https://nodejs.org/
+  - Linux: Tell me to run these commands myself (they need sudo):
+    curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+    sudo apt install -y nodejs
+    Wait for me to confirm it's done.
+- After install, verify: node --version
+- If the command still isn't found after install, tell me to restart my
+  terminal or IDE so the PATH updates.
 
 STEP 4: CHECK AND INSTALL CLAUDE CODE
 - Run: claude --version
 - If Claude Code is installed, print the version and move on.
 - If NOT installed:
   - macOS/Linux: Run "curl -fsSL https://claude.ai/install.sh | bash"
-  - Windows PowerShell: Run "irm https://claude.ai/install.ps1 | iex"
-  - Alternative — macOS: "brew install --cask claude-code"
-  - Alternative — Windows: "winget install Anthropic.ClaudeCode"
-- Verify after install: claude --version
-- NOTE: Claude Code requires a paid Claude account (Pro, Max, Teams, or Enterprise).
-  The free plan does not include Claude Code access. Tell me if I need to sign up.
+  - Windows: Run "winget install Anthropic.ClaudeCode" or in PowerShell
+    run "irm https://claude.ai/install.ps1 | iex"
+- After install, verify: claude --version
+- If "claude" is not found after install, tell me to restart my terminal or
+  IDE so the PATH picks up the new installation, then try again.
+- IMPORTANT: Claude Code requires a PAID Claude account (Pro at $20/month,
+  Max, Teams, or Enterprise). The free Claude.ai plan does NOT include Claude
+  Code. If I don't have a paid account, tell me to sign up at
+  https://claude.ai/pricing before continuing.
 
 STEP 5: CLONE THE REPOSITORY
-- Check if the repo already exists locally. If it does, run "git pull" to update.
+- Check if the directory "hogwarts-school-of-ai-and-automation" already exists
+  in the current folder. If it does, cd into it and run "git pull" to update.
 - If it doesn't exist, run:
   git clone https://github.com/kevindubon/hogwarts-school-of-ai-and-automation.git
-- Then cd into the directory.
+  cd hogwarts-school-of-ai-and-automation
 
 STEP 6: VERIFY EVERYTHING
-- Print a summary table showing:
-  - Git: installed? version?
-  - Node.js: installed? version 18+?
-  - Claude Code: installed? version?
-  - Repo: cloned? path?
-- If anything is missing, tell me what to fix.
-- If everything is ready, tell me to open a terminal in the repo directory,
-  run "claude", and then type "/hogwarts-school" to begin.
+Print a clear summary showing:
+  - OS: (what was detected)
+  - Git: (version or MISSING)
+  - Node.js: (version or MISSING — must be 18+)
+  - Claude Code: (version or MISSING)
+  - Repository: (cloned and path, or MISSING)
 
-IMPORTANT:
-- Do NOT skip the verification steps. Check before installing.
-- If something fails, explain what went wrong and suggest a fix.
-- Do NOT install anything without checking first.
+If anything is MISSING, list exactly what I need to fix.
+
+If everything is ready, tell me:
+  1. Open a terminal in the repo directory
+  2. Run "claude" to start Claude Code
+  3. Complete the login if prompted (browser will open)
+  4. Type "/hogwarts-school" to begin the course
+  5. The Sorting Hat will take it from there
+
+IMPORTANT RULES:
+- Do NOT skip verification steps. Always check before installing.
+- If something fails to install, explain what went wrong clearly.
+- If a command needs sudo/admin and you can't run it, tell me the exact
+  command to run myself and wait for me to confirm.
+- After ANY installation, verify the tool is available. If not, tell me to
+  restart my terminal/IDE for PATH changes to take effect.
+- Do NOT install anything without checking if it's already installed first.
 ```
 
 ---
