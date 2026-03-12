@@ -30,12 +30,11 @@ Each module has structured lessons (HOOK/TEACH/SHOW/TRY/CHECKPOINT), hands-on ex
 - **Easter eggs** — hidden achievements for the curious ("I solemnly swear I am up to no good")
 - **Butterbeer Breaks** — because even wizards need a breather
 
-## Prerequisites
+## Getting Started
 
-- [Claude Code](https://claude.ai/code) (Claude's official CLI)
-- Node.js 18+
+**New to all of this?** See the **[Full Setup Guide](SETUP.md)** — it walks you through installing Git, Node.js, Claude Code, and an IDE. There's a **copy-paste prompt** you can give to any AI agent (Antigravity, Cursor, etc.) and it handles the entire installation for you.
 
-## Quick Start
+**Already have Git, Node.js 18+, and Claude Code?** Quick start:
 
 ```bash
 git clone https://github.com/kevindubon/hogwarts-school-of-ai-and-automation.git
