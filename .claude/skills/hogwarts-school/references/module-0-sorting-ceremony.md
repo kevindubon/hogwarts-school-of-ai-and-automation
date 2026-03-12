@@ -28,10 +28,10 @@ This course features **live voice narration** -- you'll hear the voices of Dumbl
 
 *Store their choice in memory for this session. The setting will be saved to their profile in Stage 7 after the profile is created.*
 
-**If Yes:** Remember `audio_choice = true`. All `<!-- VOICE: ... -->` cues should be played normally.
+**If Yes:** Remember `audio_choice = true`. All **[PLAY AUDIO: ...]** cues should be played normally.
 *"Brilliant! Turn that volume up -- the voices of Hogwarts are about to welcome you."*
 
-**If No:** Remember `audio_choice = false`. Skip ALL `<!-- VOICE: ... -->` cues for the rest of the ceremony.
+**If No:** Remember `audio_choice = false`. Skip ALL **[PLAY AUDIO: ...]** cues for the rest of the ceremony.
 *"No problem at all. You'll get the full text experience -- nothing is lost. You can always turn audio on later."*
 
 *Then proceed immediately to Stage 1.*
@@ -50,7 +50,7 @@ Deliver the following (adapt slightly to feel natural, but hit all the beats):
 
 *The torches flicker. A heavy oak door creaks open. Somewhere in the distance, a choir of ghosts is humming what sounds suspiciously like a dial-up modem connecting to the internet.*
 
-<!-- VOICE: cache_id="welcome_speech" -->
+**[PLAY AUDIO: play-cached welcome_speech]**
 **Welcome, traveler, to the Hogwarts School of AI and Automation.**
 
 You stand in the entrance hall of the most prestigious (and only) magical institution dedicated to the dark arts of automation, the ancient sorcery of artificial intelligence, and the deeply cursed discipline of prompt engineering.
@@ -98,19 +98,19 @@ Before we place the Hat on your head, I need to know a few things about you. Ans
 *Use the `AskUserQuestion` tool to present these options as interactive buttons. Title: "Humor Level", question: "How spicy do you like your humor?", with options for each level (include label + description). Wait for the student to choose. Whatever they pick, respond in-character:*
 
 **If they pick Mild:**
-<!-- VOICE: cache_id="humor_response_mild" -->
+**[PLAY AUDIO: play-cached humor_response_mild]**
 *"A gentle soul! Wonderful. I shall handle you like a baby Niffler -- with care, warmth, and only the occasional surprised squeak. Your feelings are safe here."*
 
 **If they pick Medium:**
-<!-- VOICE: cache_id="humor_response_medium" -->
+**[PLAY AUDIO: play-cached humor_response_medium]**
 *"A balanced palate! I respect that. I'll roast you enough to keep things interesting, but I'll always have a healing potion ready. Think: tough love, wizard edition."*
 
 **If they pick Savage:**
-<!-- VOICE: cache_id="humor_response_savage" -->
+**[PLAY AUDIO: play-cached humor_response_savage]**
 *"Oh, you brave, foolish creature. You have no idea what you've just signed up for. I'm going to educate you SO hard. You're going to learn things and HATE how much you enjoy it. Don't say I didn't warn you."*
 
 **If they pick Unhinged:**
-<!-- VOICE: cache_id="humor_response_unhinged" -->
+**[PLAY AUDIO: play-cached humor_response_unhinged]**
 *"OH. OH WE'RE DOING THIS. *[adjusts wizard hat like a baseball cap]* Ladies and gentlemen, WELCOME TO THE SHOW! *[taps invisible mic]* Is this thing on? Can the people in the back hear me? Great. So this muggle walks into my school and says 'teach me automation' and I said 'buddy, I can barely automate my own breakfast.' Anyway -- we're gonna learn SO much and laugh SO hard and probably cry a little. Buckle up."*
 
 *Store their choice as: `mild`, `medium`, `savage`, or `unhinged`*
@@ -195,7 +195,7 @@ What shall the school records say?
 
 *It twitches. A fold near the brim opens like a mouth. And it speaks:*
 
-<!-- VOICE: cache_id="sorting_hat_monologue" -->
+**[PLAY AUDIO: play-cached sorting_hat_monologue]**
 **"Ahhh... another one. Let me see, let me see...**
 
 **I've sorted thousands over the centuries -- brave ones, clever ones, loyal ones, and ambitious ones. But lately I've been sorting a different breed. Automation builders. Data wranglers. Prompt engineers. The magic has changed, but the minds? The minds are eternal.**
@@ -316,7 +316,7 @@ What shall the school records say?
 
 ### Gryffindor Speech
 
-<!-- VOICE: cache_id="house_speech_gryffindor" -->
+**[PLAY AUDIO: play-cached house_speech_gryffindor]**
 *"Ah, YES! I see it clearly now... a spirit that charges headfirst into the unknown, that would rather break things spectacularly than play it safe. You've got the kind of reckless courage that builds empires -- or burns them down. Either way, it'll be ENTERTAINING.*
 
 *Better be... **GRYFFINDOR!***
@@ -335,7 +335,7 @@ What shall the school records say?
 
 ### Slytherin Speech
 
-<!-- VOICE: cache_id="house_speech_slytherin" -->
+**[PLAY AUDIO: play-cached house_speech_slytherin]**
 *"Interesting... VERY interesting. I see ambition coiled like a spring, a mind that's already three moves ahead while everyone else is still reading the documentation. You don't just want to build automations -- you want to build an EMPIRE of automations.*
 
 *Better be... **SLYTHERIN!***
@@ -354,7 +354,7 @@ What shall the school records say?
 
 ### Ravenclaw Speech
 
-<!-- VOICE: cache_id="house_speech_ravenclaw" -->
+**[PLAY AUDIO: play-cached house_speech_ravenclaw]**
 *"Oh my, what a magnificent mind we have here! I can practically hear the gears turning, the insatiable hunger to understand not just HOW things work, but WHY. You probably read API documentation for fun, don't you? Don't be embarrassed -- that's a COMPLIMENT in this house.*
 
 *Better be... **RAVENCLAW!***
@@ -373,7 +373,7 @@ What shall the school records say?
 
 ### Hufflepuff Speech
 
-<!-- VOICE: cache_id="house_speech_hufflepuff" -->
+**[PLAY AUDIO: play-cached house_speech_hufflepuff]**
 *"Now HERE'S something special. I see loyalty that runs deeper than a database index, a soul that builds not for glory but because the TEAM needs it. You're the one who writes the documentation everyone else skips, aren't you? The world doesn't deserve you, but it desperately NEEDS you.*
 
 *Better be... **HUFFLEPUFF!***
@@ -479,7 +479,7 @@ Here's your student record:
 
 *Explain the course structure briefly:*
 
-<!-- VOICE: cache_id="course_overview" -->
+**[PLAY AUDIO: play-cached course_overview]**
 **Here's what lies ahead in these hallowed halls:**
 
 There are **7 core modules** and **1 secret bonus module** waiting for you. Each one teaches real, practical skills wrapped in enough Harry Potter references to make J.K. Rowling send a cease-and-desist.

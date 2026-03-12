@@ -134,7 +134,7 @@ math by hand. Unacceptable. We have magic.
 
 ### TRY
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise: Plan Your Automation (DO — 25 points)**
 
 Your turn. Before we write ANY code, you need to create your own planning document for the Hogwarts House Report Generator. You can use the template above as a starting point, but make it YOURS.
@@ -316,8 +316,8 @@ Key things to notice:
 
 ### TRY
 
-<!-- VOICE: cache_id="cameo_hagrid" -->
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached cameo_hagrid]**
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise: Build the Fetch Layer (BUILD — 35 points)**
 
 Write a script called `fetch-houses.js` that:
@@ -519,7 +519,7 @@ The answer is (b). Including nulls as zero would drag down the average — that'
 
 ---
 
-<!-- VOICE: cache_id="peeves_interrupt" -->
+**[PLAY AUDIO: play-cached peeves_interrupt]**
 ## Lesson 4: Save & Report (The Third Challenge)
 
 **Exercise ID:** `m7_save_report`
@@ -649,7 +649,7 @@ Key things to notice:
 
 ### TRY
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise: Build the Output Layer (BUILD — 35 points)**
 
 Write a script called `save-report.js` that takes your transformed house statistics and produces TWO outputs:
@@ -828,7 +828,7 @@ Note how the SKILL.md doesn't contain any JavaScript. It ORCHESTRATES the JavaSc
 
 ### TRY
 
-<!-- VOICE: cache_id="cameo_mcgonagall" -->
+**[PLAY AUDIO: play-cached cameo_mcgonagall]**
 **FINAL EXERCISE: Package the Complete Automation as a Skill (BUILD — 35 points)**
 
 This is it. The graduation exercise. The Triwizard Cup.
@@ -900,7 +900,7 @@ The answer is (b). The SKILL.md is the brain of the automation. It doesn't DO th
 
 ---
 
-<!-- VOICE: cache_id="module_complete" -->
+**[PLAY AUDIO: play-cached module_complete]**
 ## Module Completion
 
 **When the student completes Lesson 5's final exercise, this module is DONE.**
@@ -927,7 +927,7 @@ This student has earned it. They planned an automation. They fetched live data f
 
 They didn't just learn automation. They BUILT one. From nothing. And it works.
 
-<!-- VOICE: cache_id="rank_up" -->
+**[PLAY AUDIO: play-cached rank_up]**
 **TRIGGER GRADUATION.**
 
 ---

@@ -113,7 +113,7 @@ console.log(isRestricted + 1);       // 2 -- true becomes 1, because JavaScript 
 
 ### TRY
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 "Quick drill -- tell me the type of each of these values. Don't overthink it, just identify the ingredient:
 
 1. `"Dumbledore"`
@@ -242,7 +242,7 @@ console.log(nameTags);  // ["[HARRY]", "[HERMIONE]", "[RON]", "[DRACO]", "[LUNA]
 
 ### TRY
 
-<!-- VOICE: cache_id="cameo_hagrid" -->
+**[PLAY AUDIO: play-cached cameo_hagrid]**
 **Exercise 2A: The Student Roster (DO -- 25 points)**
 
 "Your turn. Here's what I need you to do:
@@ -268,7 +268,7 @@ Write the code and show me the output. I'll wait. And no, you can't just copy my
 
 ---
 
-<!-- VOICE: cache_id="peeves_interrupt" -->
+**[PLAY AUDIO: play-cached peeves_interrupt]**
 ## Lesson 3: Objects (Potion Recipes)
 
 ### HOOK
@@ -412,7 +412,7 @@ console.log(ingredientList);
 
 ### TRY
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise 2B: The Potion Recipe Card (BUILD -- 35 points)**
 
 "Time to brew. Create a potion recipe object with ALL of the following properties:
@@ -628,7 +628,7 @@ console.log(updatedJson);
 
 ### TRY
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise 2C: Your Hogwarts Student Card (DO -- 25 points)**
 
 "Write yourself as a Hogwarts student in valid JSON. Not a JavaScript object -- proper, strict, publishable JSON. Include:
@@ -650,7 +650,7 @@ Paste your JSON and I'll validate it. If it's invalid, I'll tell you exactly whe
 
 ### CHECKPOINT
 
-<!-- VOICE: cache_id="cameo_mcgonagall" -->
+**[PLAY AUDIO: play-cached cameo_mcgonagall]**
 "Which of these is valid JSON?
 
 (a) `{ name: 'Harry', age: 15 }`
@@ -913,7 +913,7 @@ How many characters should be in your final array? Think about it before you cod
 
 ---
 
-<!-- VOICE: cache_id="module_complete" -->
+**[PLAY AUDIO: play-cached module_complete]**
 ## Module Summary
 
 "You've just completed the Potions fundamentals. Let's recap what's now in your ingredient cabinet:

@@ -12,11 +12,26 @@
     "output_format": "mp3_44100_128"
   },
   "characters": {
-    "dumbledore": { "voice_id": "JoYo65swyP8hH6fVMeTO", "description": "Wise wizard narrator" },
-    "sorting_hat": { "voice_id": "HAvvFKatz0uu0Fv55Riy", "description": "Ancient, mysterious hat" },
-    "mcgonagall": { "voice_id": "HH3kybY6uEJ2ebSa9Vy3", "description": "Stern British professor" },
-    "hagrid": { "voice_id": "bFrjFL4nlpeYNwNRhXxq", "description": "Warm, gruff groundskeeper" },
-    "peeves": { "voice_id": "DUhzmIGFwXJ752SvgcCj", "description": "Mischievous poltergeist" }
+    "dumbledore": {
+      "voice_id": "JoYo65swyP8hH6fVMeTO",
+      "description": "Wise wizard narrator"
+    },
+    "sorting_hat": {
+      "voice_id": "HAvvFKatz0uu0Fv55Riy",
+      "description": "Ancient, mysterious hat"
+    },
+    "mcgonagall": {
+      "voice_id": "HH3kybY6uEJ2ebSa9Vy3",
+      "description": "Stern British professor"
+    },
+    "hagrid": {
+      "voice_id": "bFrjFL4nlpeYNwNRhXxq",
+      "description": "Warm, gruff groundskeeper"
+    },
+    "peeves": {
+      "voice_id": "DUhzmIGFwXJ752SvgcCj",
+      "description": "Mischievous poltergeist"
+    }
   },
   "openai": {
     "api_key_env": "OPENAI_API_KEY",

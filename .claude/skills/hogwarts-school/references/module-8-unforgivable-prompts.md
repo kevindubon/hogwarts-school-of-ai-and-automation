@@ -99,7 +99,7 @@ The difference in effort? Maybe 45 seconds. The difference in usefulness? Night 
 
 ### TRY
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise: Observe and Compare (OBSERVE)**
 
 Below are 3 pairs of prompts. For each pair, identify **at least two specific reasons** why Prompt B is better than Prompt A.
@@ -284,7 +284,7 @@ You should be able to:
 
 ---
 
-<!-- VOICE: cache_id="peeves_interrupt" -->
+**[PLAY AUDIO: play-cached peeves_interrupt]**
 ## Lesson 3: Common Prompt Anti-Patterns (The Unforgivable Three)
 
 ### HOOK
@@ -368,7 +368,7 @@ Or:
 
 ### TRY
 
-<!-- VOICE: cache_id="cameo_mcgonagall" -->
+**[PLAY AUDIO: play-cached cameo_mcgonagall]**
 **Exercise: Dark Arts Defense (ANALYZE)**
 
 Below are 5 prompts. For each one:
@@ -550,7 +550,7 @@ Three prompts. Three focused tasks. One powerful pipeline.
 
 ### TRY
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise: Build a Complete Prompt (BUILD)**
 
 Your task: Write a complete 6-component prompt for this real-world scenario:
@@ -736,7 +736,7 @@ Now classify the ticket above.
 
 ### TRY
 
-<!-- VOICE: cache_id="cameo_hagrid" -->
+**[PLAY AUDIO: play-cached cameo_hagrid]**
 **Capstone Exercise: Prompt A/B Testing (BUILD)**
 
 This is your final exercise for the module. It combines everything you've learned.
@@ -781,7 +781,7 @@ You should be able to:
 
 ---
 
-<!-- VOICE: cache_id="module_complete" -->
+**[PLAY AUDIO: play-cached module_complete]**
 ## Module 8 Summary
 
 You've completed your training in the art and science of prompt engineering. Let's review:

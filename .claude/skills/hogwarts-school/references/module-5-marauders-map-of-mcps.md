@@ -105,8 +105,8 @@ That's it. Claude sends a structured request, the MCP server executes it against
 
 ### TRY
 
-<!-- VOICE: cache_id="cameo_hagrid" -->
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached cameo_hagrid]**
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise: MCP Before & After (OBSERVE -- 15 points)**
 
 Look at these two scenarios. For each one, explain:
@@ -127,7 +127,7 @@ Take a moment to think through each scenario, then share your answers.
 
 ### CHECKPOINT
 
-<!-- VOICE: cache_id="cameo_mcgonagall" -->
+**[PLAY AUDIO: play-cached cameo_mcgonagall]**
 Quick check before we move on:
 
 **What is the best analogy for what MCP does for Claude?**
@@ -282,7 +282,7 @@ Quick check:
 
 ---
 
-<!-- VOICE: cache_id="peeves_interrupt" -->
+**[PLAY AUDIO: play-cached peeves_interrupt]**
 ## Lesson 3: Configuring MCPs (Activating the Map)
 
 **Exercise ID:** `m5_l3_do_read_config`
@@ -456,7 +456,7 @@ Here's a complete, annotated example of a `.mcp.json` file for a project that us
 
 ### TRY
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise: Read & Explain a Config (DO -- 25 points)**
 
 Here's an MCP configuration. Read it carefully and answer the questions below:
@@ -857,7 +857,7 @@ Three MCPs feeding data into Claude's analysis, one MCP delivering the result. F
 
 ### TRY
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise: Design a Multi-MCP Automation (BUILD -- 35 points)**
 
 Design an automation that uses **at least 2 MCPs working together**. You don't need to run it -- just plan it out on paper or in pseudocode.
@@ -894,7 +894,7 @@ Quick check:
 
 ---
 
-<!-- VOICE: cache_id="module_complete" -->
+**[PLAY AUDIO: play-cached module_complete]**
 ## Module Summary
 
 **What you've learned in Module 5:**

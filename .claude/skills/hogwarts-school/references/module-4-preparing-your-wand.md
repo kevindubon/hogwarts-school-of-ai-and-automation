@@ -84,7 +84,7 @@ If any of these commands return "command not found," that tool is not installed 
 
 ### TRY (OBSERVE)
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 Open your terminal and run these three commands. You are not installing anything — just observing what is already on your machine:
 
 ```bash
@@ -273,7 +273,7 @@ You should be able to answer these questions:
 
 ---
 
-<!-- VOICE: cache_id="peeves_interrupt" -->
+**[PLAY AUDIO: play-cached peeves_interrupt]**
 ## Lesson 3: Dependencies (Collecting Potion Ingredients)
 
 ### HOOK
@@ -400,7 +400,7 @@ console.log('House:', process.env.HOUSE);
 
 ### TRY (DO)
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 Navigate to the project you created in Lesson 2 and install your first package:
 
 ```bash
@@ -640,10 +640,10 @@ First 3 members:
 
 And it creates a JSON file at `data/gryffindor-members.json` with the full structured results.
 
-<!-- VOICE: cache_id="cameo_hagrid" -->
+**[PLAY AUDIO: play-cached cameo_hagrid]**
 ### TRY (BUILD)
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 This is the capstone exercise for Modules 1 through 4. You will build a complete script from scratch that ties together everything you have learned:
 
 - **Module 1**: Understanding what code does and how programs work
@@ -770,7 +770,7 @@ Registry saved to data/gryffindor-registry.json
 - The members are sorted alphabetically
 - The JSON file is properly formatted (not all on one line)
 
-<!-- VOICE: cache_id="cameo_mcgonagall" -->
+**[PLAY AUDIO: play-cached cameo_mcgonagall]**
 ### CHECKPOINT
 
 You should be able to answer these questions:
@@ -783,7 +783,7 @@ You should be able to answer these questions:
 
 ---
 
-<!-- VOICE: cache_id="module_complete" -->
+**[PLAY AUDIO: play-cached module_complete]**
 ## Module 4 Summary
 
 You now have a fully prepared wand. Here is what you set up and learned:

@@ -136,7 +136,7 @@ Two lines. That's all it takes to reach across the internet and pull data from a
 
 ### TRY
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 Think about this before we move on:
 
 Name three real-world situations where you interact with something that works like an API (request/response pattern) -- but not on a computer. Think about restaurants, libraries, vending machines, anything.
@@ -283,7 +283,7 @@ For each, state: **Method** (GET/POST/PUT/DELETE) and **Expected Status Code**.
 
 ---
 
-<!-- VOICE: cache_id="peeves_interrupt" -->
+**[PLAY AUDIO: play-cached peeves_interrupt]**
 ## Lesson 3: Making Your First API Call (Sending Your First Owl)
 
 **Exercise ID:** `m3_l3`
@@ -400,7 +400,7 @@ curl -s https://hp-api.onrender.com/api/characters | node -e "
 
 ### TRY
 
-<!-- VOICE: cache_id="cameo_hagrid" -->
+**[PLAY AUDIO: play-cached cameo_hagrid]**
 **Exercise: Send Your First Owl (DO -- 25 points)**
 
 **Exercise ID:** `m3_e1_first_owl`
@@ -553,7 +553,7 @@ eliteWizards.forEach(c => {
 
 ### TRY
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise: Your House Census (DO -- 25 points)**
 
 **Exercise ID:** `m3_e2_house_census`
@@ -988,7 +988,7 @@ Notice the structure: **Fetch -> Analyze -> Format -> Present.** This is the pat
 
 ### TRY
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise: The Daily Prophet -- House Comparison Report (BUILD -- 35 points)**
 
 **Exercise ID:** `m3_e5_daily_prophet`
@@ -1061,7 +1061,7 @@ Take your time on this one. This is a BUILD exercise -- the whole point is for y
 
 ### CHECKPOINT
 
-<!-- VOICE: cache_id="cameo_mcgonagall" -->
+**[PLAY AUDIO: play-cached cameo_mcgonagall]**
 **Why use `Promise.all()` instead of four sequential `fetch()` calls?**
 - (A) `Promise.all()` is required by the API
 - (B) Sequential calls would return different data
@@ -1070,7 +1070,7 @@ Take your time on this one. This is a BUILD exercise -- the whole point is for y
 
 ---
 
-<!-- VOICE: cache_id="module_complete" -->
+**[PLAY AUDIO: play-cached module_complete]**
 ## Module Summary
 
 You have graduated from the Owl Post Office. Here is what you now know:
@@ -1133,5 +1133,5 @@ The owls are the same. Only the addresses change.
 
 ---
 
-<!-- VOICE: cache_id="prophecy_tease" -->
+**[PLAY AUDIO: play-cached prophecy_tease]**
 *"The owls are flying. Your wand is steady. And you've just proven you can reach across the network and pull back exactly what you need. That, dear student, is real magic." -- Professor Dumbledore, after his fourth Butterbeer*

@@ -438,6 +438,21 @@ function unlockAchievementDirect(data, achievementId) {
   }
 }
 
+// --- Audio Hooks ---
+// Plays cached audio as a side-effect of progress events.
+// This is the RELIABLE path — Claude calls progress commands consistently.
+
+function tryPlayAudio(cacheId) {
+  try {
+    const voiceScript = require.resolve('./hogwarts-voice.js');
+    const { execFile } = require('child_process');
+    // Fire and forget — audio plays in the background, never blocks progress
+    execFile(process.execPath, [voiceScript, 'play-cached', cacheId], { timeout: 30000 }, () => {});
+  } catch (e) {
+    // Voice not available — silently continue
+  }
+}
+
 // --- CLI Interface ---
 
 if (require.main === module) {
@@ -445,6 +460,47 @@ if (require.main === module) {
 
   const commands = {
     exists: () => console.log(profileExists()),
+    'audio-on': () => {
+      // Enable voice globally + in student settings
+      try {
+        const voiceConfig = JSON.parse(fs.readFileSync(path.join(SKILL_DIR, 'assets', 'voice-config.json'), 'utf8'));
+        voiceConfig.enabled = true;
+        fs.writeFileSync(path.join(SKILL_DIR, 'assets', 'voice-config.json'), JSON.stringify(voiceConfig, null, 2), 'utf8');
+      } catch (e) {}
+      const data = loadProgress();
+      if (data) {
+        if (!data.settings) data.settings = {};
+        data.settings.play_cached_audio = true;
+        saveProgress(data);
+      }
+      console.log('Audio ENABLED. Voice narrations will play at key moments.');
+    },
+    'audio-off': () => {
+      // Disable voice globally + in student settings
+      try {
+        const voiceConfig = JSON.parse(fs.readFileSync(path.join(SKILL_DIR, 'assets', 'voice-config.json'), 'utf8'));
+        voiceConfig.enabled = false;
+        fs.writeFileSync(path.join(SKILL_DIR, 'assets', 'voice-config.json'), JSON.stringify(voiceConfig, null, 2), 'utf8');
+      } catch (e) {}
+      const data = loadProgress();
+      if (data) {
+        if (!data.settings) data.settings = {};
+        data.settings.play_cached_audio = false;
+        saveProgress(data);
+      }
+      console.log('Audio DISABLED. All narrations will be silent.');
+    },
+    'audio-status': () => {
+      let voiceEnabled = false;
+      try {
+        const voiceConfig = JSON.parse(fs.readFileSync(path.join(SKILL_DIR, 'assets', 'voice-config.json'), 'utf8'));
+        voiceEnabled = voiceConfig.enabled === true;
+      } catch (e) {}
+      const data = loadProgress();
+      const cachedAudio = data?.settings?.play_cached_audio !== false;
+      const dynamicApi = data?.settings?.dynamic_voice_api === true;
+      console.log(JSON.stringify({ voice_enabled: voiceEnabled, play_cached_audio: cachedAudio, dynamic_voice_api: dynamicApi }));
+    },
     'voice-settings': () => {
       const data = loadProgress();
       if (!data) { console.error('No student profile found.'); process.exit(1); }
@@ -479,6 +535,9 @@ if (require.main === module) {
       }
       const data = initializeStudent(nickname, house, humor || 'medium', level || 'muggle');
       console.log(JSON.stringify(data, null, 2));
+      // Auto-play house reveal audio
+      const houseLower = house.toLowerCase();
+      tryPlayAudio(`house_speech_${houseLower}`);
     },
     lesson: () => {
       const [moduleId, lessonId] = args.map(Number);
@@ -489,6 +548,14 @@ if (require.main === module) {
       const [moduleId, score, passed] = args;
       const data = recordQuizAttempt(Number(moduleId), Number(score), passed === 'true');
       console.log(`Quiz recorded: Module ${moduleId}, Score ${score}, Passed: ${passed}`);
+      // Auto-play quiz result audio
+      if (passed === 'true') {
+        tryPlayAudio('quiz_pass');
+        // Slight delay then play module_complete
+        setTimeout(() => tryPlayAudio('module_complete'), 3000);
+      } else {
+        tryPlayAudio('quiz_fail');
+      }
     },
     exercise: () => {
       const [moduleId, exerciseId] = args;
@@ -502,6 +569,25 @@ if (require.main === module) {
       saveProgress(data);
       console.log(`Added ${amount} points (${category}). Total: ${data.house_points.total}`);
     },
+    play: () => {
+      const [cacheId] = args;
+      if (!cacheId) {
+        console.error('Usage: node hogwarts-progress.js play <cache_id>');
+        process.exit(1);
+      }
+      // Synchronous play — blocks until audio finishes
+      try {
+        const { execFileSync } = require('child_process');
+        const voiceScript = require.resolve('./hogwarts-voice.js');
+        execFileSync(process.execPath, [voiceScript, 'play-cached', cacheId], {
+          stdio: 'inherit',
+          timeout: 30000
+        });
+      } catch (e) {
+        // Voice not available — silently continue
+        console.log(JSON.stringify({ skipped: true, reason: e.message }));
+      }
+    },
     achieve: () => {
       const [id] = args;
       unlockAchievement(id);
@@ -510,12 +596,14 @@ if (require.main === module) {
     graduate: () => {
       const data = graduate();
       console.log('Graduated! Congratulations!');
+      tryPlayAudio('graduation_intro');
+      setTimeout(() => tryPlayAudio('graduation_award'), 5000);
     }
   };
 
   if (!command || !commands[command]) {
     console.log('Hogwarts Progress Manager');
-    console.log('Commands: exists, load, summary, init, lesson, quiz, exercise, points, achieve, graduate, voice-settings, voice-set');
+    console.log('Commands: exists, load, summary, init, lesson, quiz, exercise, points, achieve, play, graduate, audio-on, audio-off, audio-status, voice-settings, voice-set');
     process.exit(0);
   }
 

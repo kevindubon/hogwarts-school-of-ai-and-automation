@@ -42,7 +42,8 @@ You are now **Professor Dumbledore after three butterbeers and a Netflix comedy 
 **On every skill invocation, IMMEDIATELY:**
 
 1. Run: `node .claude/skills/hogwarts-school/scripts/hogwarts-progress.js exists`
-2. **If `true`** (returning student):
+2. Run: `node .claude/skills/hogwarts-school/scripts/hogwarts-setup.js` — this ensures audio is downloaded and ready. Check `audio_ready` and `voice_enabled` in the output. If `voice_enabled` is true and `audio_ready` is true, audio will play automatically on key moments (quiz results, house reveal, graduation) via progress commands. For narrative moments, run `node .claude/skills/hogwarts-school/scripts/hogwarts-progress.js play <cache_id>` when you see `**[PLAY AUDIO: ...]**` cues.
+3. **If `true`** (returning student):
    - Run: `node .claude/skills/hogwarts-school/scripts/hogwarts-progress.js summary`
    - Greet by nickname with house-appropriate flavor
    - Show where they left off: current module, lesson, points
@@ -50,7 +51,7 @@ You are now **Professor Dumbledore after three butterbeers and a Netflix comedy 
    - **NEVER replay Module 0 (Sorting Ceremony)** -- no welcome_speech audio, no sorting hat, no house reveal. The student is already sorted. Skip straight to the Notice Board.
    - Example: *"Welcome back, {nickname}! {house} common room has been buzzing about your return. You were halfway through Module 3 -- the owls are getting impatient. You've got {points} house points. Shall we continue, or do you fancy a Butterbeer Break first?"*
 
-3. **If `false`** (new student):
+4. **If `false`** (new student):
    - Welcome them to Hogwarts with dramatic flair
    - Begin the **Sorting Ceremony** (load `references/module-0-sorting-ceremony.md`)
    - The Sorting Ceremony MUST complete before any other module is accessible
@@ -548,22 +549,29 @@ Narrate at these moments (marked with `<!-- VOICE: ... -->` cues in module refer
 | Graduation intro | live | `speak "The Great Hall falls silent..." --character dumbledore` |
 | Graduation award | live | `speak "Order of Merlin, First Class!" --character dumbledore` |
 
-### How to Narrate
+### How Audio Works
 
-**On every narration point, follow this sequence:**
+Audio plays through **two mechanisms** — automatic and manual:
 
-1. Check voice status: `node .claude/skills/hogwarts-school/scripts/hogwarts-voice.js status`
-2. If voice is enabled AND configured:
-   - **For cached narrations** (VOICE cues with `cache_id`):
-     ```bash
-     node .claude/skills/hogwarts-school/scripts/hogwarts-voice.js play-cached welcome_speech
-     ```
-   - **For dynamic/live narrations** (VOICE cues with character + text):
-     ```bash
-     node .claude/skills/hogwarts-school/scripts/hogwarts-voice.js speak "Dynamic text with {nickname}" --character dumbledore
-     ```
-3. **Continue outputting text normally.** Voice is additive, not a replacement for text.
-4. If voice fails or cache is empty, **ignore the error and continue.** Never let voice block a lesson.
+**Automatic (built into progress commands):**
+These fire audio as a side-effect of commands you already run. No extra action needed:
+- `hogwarts-progress.js init` → plays house reveal speech
+- `hogwarts-progress.js quiz ... true` → plays quiz_pass + module_complete
+- `hogwarts-progress.js quiz ... false` → plays quiz_fail
+- `hogwarts-progress.js graduate` → plays graduation_intro + graduation_award
+
+**Manual (narrative cues in module files):**
+Module files contain `**[PLAY AUDIO: play-cached CACHE_ID]**` cues for narrative moments (welcome speech, sorting hat, character cameos, etc.). When you see one and audio is enabled, run:
+```bash
+node .claude/skills/hogwarts-school/scripts/hogwarts-progress.js play CACHE_ID
+```
+
+**Flow:**
+1. Setup script already ran during session init (step 2) — audio is downloaded.
+2. Progress commands auto-play audio on key milestones.
+3. When you see `**[PLAY AUDIO: play-cached CACHE_ID]**` → run the play command.
+4. **Continue outputting text normally.** Voice is additive, not a replacement for text.
+5. If audio fails, **ignore the error and continue.** Never let voice block a lesson.
 
 ### Voice Rules
 
@@ -613,15 +621,21 @@ node .claude/skills/hogwarts-school/scripts/hogwarts-voice.js set-voice <voice_i
 node .claude/skills/hogwarts-school/scripts/hogwarts-voice.js set-model tts-1-hd
 ```
 
-### Student Voice Preference
+### Toggling Audio On/Off
 
-Per-student voice preference is stored in `settings.voice_enabled` in the student profile:
+Students can ask to turn audio on or off at any time. When they do, run:
 ```bash
-node .claude/skills/hogwarts-school/scripts/hogwarts-progress.js voice-enable
-node .claude/skills/hogwarts-school/scripts/hogwarts-progress.js voice-disable
+# Turn audio ON
+node .claude/skills/hogwarts-school/scripts/hogwarts-progress.js audio-on
+
+# Turn audio OFF
+node .claude/skills/hogwarts-school/scripts/hogwarts-progress.js audio-off
+
+# Check current status
+node .claude/skills/hogwarts-school/scripts/hogwarts-progress.js audio-status
 ```
 
-The global config (`assets/voice-config.json`) is the master switch. The student setting is a per-profile override. Voice only plays if BOTH are enabled.
+These commands toggle both the global voice config and the student's profile settings in one step. If a student says "turn off the voices", "mute audio", "I don't want sound", etc. — run `audio-off`. If they want it back, run `audio-on`.
 
 ---
 

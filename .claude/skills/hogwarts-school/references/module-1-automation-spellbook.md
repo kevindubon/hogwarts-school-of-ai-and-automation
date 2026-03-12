@@ -112,10 +112,10 @@ Wizard equivalent: A Patronus that flies to the right person
 
 Notice the pattern? Every single one has the same three parts: **Trigger, Condition, Action.** Just like every spell has an incantation, an intent, and an effect.
 
-<!-- VOICE: cache_id="cameo_hagrid" -->
+**[PLAY AUDIO: play-cached cameo_hagrid]**
 ### TRY
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise: The Daily Spell Inventory (OBSERVE -- 15 points)**
 
 Exercise ID: `m1-ex1`
@@ -139,7 +139,7 @@ Now you try. Share your three tasks and I'll review them.
 
 **Completion criteria:** Student identifies 3 real tasks with reasonable trigger/condition/action breakdowns. They don't need to be technically precise -- this is about developing the automation mindset.
 
-<!-- VOICE: cache_id="cameo_mcgonagall" -->
+**[PLAY AUDIO: play-cached cameo_mcgonagall]**
 ### CHECKPOINT
 
 > **Quick wand check before we move on:**
@@ -267,7 +267,7 @@ See how the structure is identical? The domain changes (magic vs. software), but
 
 ### TRY
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise: Spell Mapping (DO -- 25 points)**
 
 Exercise ID: `m1-ex2`
@@ -324,7 +324,7 @@ ACTION(S):
 
 ---
 
-<!-- VOICE: cache_id="peeves_interrupt" -->
+**[PLAY AUDIO: play-cached peeves_interrupt]**
 ## Lesson 3: Types of Automations (Schools of Magic)
 
 ### HOOK
@@ -464,7 +464,7 @@ Does a human need to decide when to run it?
 
 ### TRY
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise: The Sorting Hat for Automations (ANALYZE -- 25 points)**
 
 Exercise ID: `m1-ex3`
@@ -729,7 +729,7 @@ Same result. Four very different paths. All valid.
 
 ### TRY
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise: Your First Pseudocode Spell (BUILD -- 35 points)**
 
 Exercise ID: `m1-ex4`
@@ -818,7 +818,7 @@ ON ERROR:
 
 ---
 
-<!-- VOICE: cache_id="module_complete" -->
+**[PLAY AUDIO: play-cached module_complete]**
 ## Module 1 Complete
 
 **What was covered:**

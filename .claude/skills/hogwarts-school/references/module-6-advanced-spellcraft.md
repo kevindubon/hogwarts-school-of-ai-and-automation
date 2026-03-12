@@ -218,7 +218,7 @@ Notice the structure: purpose up front, instructions in the middle, references p
 
 Time to study an actual skill from the inside. You're going to read the SKILL.md for the very course you're taking right now — the Hogwarts School skill.
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise: OBSERVE (15 points)**
 
 Read the Hogwarts School SKILL.md file:
@@ -360,8 +360,8 @@ Clear, structured, actionable. Claude can follow this without guessing.
 
 ### TRY
 
-<!-- VOICE: cache_id="cameo_hagrid" -->
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached cameo_hagrid]**
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise: DO (25 points)**
 
 Plan out a skill — on paper (or in your head). Don't create any files yet. Just think through the design.
@@ -484,7 +484,7 @@ If all of this were crammed into one SKILL.md, it would be tens of thousands of 
 
 ### TRY
 
-<!-- VOICE: cache_id="exercise_intro" -->
+**[PLAY AUDIO: play-cached exercise_intro]**
 **Exercise: BUILD (35 points) — KEY MODULE EXERCISE**
 
 Time to create a real, working skill. You're going to build an `hp-lookup` skill that uses the HP-API to look up Harry Potter character and spell information.
@@ -545,7 +545,7 @@ Go build your spell.
 
 ### CHECKPOINT
 
-<!-- VOICE: cache_id="cameo_mcgonagall" -->
+**[PLAY AUDIO: play-cached cameo_mcgonagall]**
 Quick check: You have a skill that interacts with an API. The API has 40 different entity types, each with its own field schema. Where should those schemas live?
 
 **(a)** All in SKILL.md — Claude needs them every time
@@ -555,7 +555,7 @@ Quick check: You have a skill that interacts with an API. The API has 40 differe
 
 ---
 
-<!-- VOICE: cache_id="peeves_interrupt" -->
+**[PLAY AUDIO: play-cached peeves_interrupt]**
 ## Lesson 5: Testing and Iterating (Spell Practice)
 
 ### HOOK
@@ -708,7 +708,7 @@ Quick check: You test your skill and discover Claude is using the wrong API endp
 
 ---
 
-<!-- VOICE: cache_id="module_complete" -->
+**[PLAY AUDIO: play-cached module_complete]**
 ## Module 6 Summary
 
 You've learned the most advanced form of magic in this course — creating your own spells. Let's recap:
