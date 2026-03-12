@@ -35,10 +35,10 @@ if [ "$MP3_COUNT" -eq 0 ]; then
   exit 1
 fi
 
-# 3. Create tarball (only MP3 files, relative paths)
+# 3. Create tarball (MP3 files + manifest.json, relative paths)
 echo "Creating tarball: $TARBALL_NAME"
 cd "$CACHE_DIR"
-find . -name "*.mp3" -type f | sort | tar czf "$TARBALL_PATH" -T -
+{ find . -name "*.mp3" -type f | sort; [ -f manifest.json ] && echo ./manifest.json; } | tar czf "$TARBALL_PATH" -T -
 cd "$PROJECT_ROOT"
 
 # 4. Compute SHA256

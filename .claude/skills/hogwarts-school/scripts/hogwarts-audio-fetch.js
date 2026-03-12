@@ -131,10 +131,38 @@ async function fetchAudio(options = {}) {
   // Clean up temp file
   try { fs.unlinkSync(tmpFile); } catch (e) {}
 
-  // Update manifest with audio_version
+  // Build manifest from static-narrations.json + extracted MP3s
   const manifest = loadManifest();
   manifest.audio_version = version.version;
   manifest.fetched_at = new Date().toISOString();
+  manifest.version = manifest.version || 1;
+  manifest.provider = manifest.provider || 'elevenlabs';
+  manifest.generated_at = manifest.generated_at || new Date().toISOString();
+
+  // Rebuild entries from static-narrations catalog
+  const narrationsCatalogPath = path.join(SKILL_DIR, 'assets', 'static-narrations.json');
+  if (fs.existsSync(narrationsCatalogPath)) {
+    const catalog = JSON.parse(fs.readFileSync(narrationsCatalogPath, 'utf8'));
+    if (!manifest.entries) manifest.entries = {};
+    for (const narration of catalog.narrations) {
+      const fileName = `${narration.id}.mp3`;
+      const filePath = path.join(CACHE_DIR, fileName);
+      if (fs.existsSync(filePath)) {
+        const textHash = crypto.createHash('md5').update(narration.text).digest('hex');
+        manifest.entries[narration.id] = {
+          file: fileName,
+          character: narration.character,
+          text: narration.text,
+          text_hash: textHash,
+          generated_at: manifest.fetched_at
+        };
+      }
+    }
+    if (!options.silent) {
+      console.log(`  Manifest rebuilt (${Object.keys(manifest.entries).length} entries)`);
+    }
+  }
+
   fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2), 'utf8');
 
   if (!options.silent) {
