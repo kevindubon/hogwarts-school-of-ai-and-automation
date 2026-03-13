@@ -116,9 +116,13 @@ async function fetchAudio(options = {}) {
   const tmpFile = path.join(CACHE_DIR, '.download.tar.gz');
   fs.writeFileSync(tmpFile, tarball);
 
-  // Extract using tar (available on macOS/Linux)
+  // Extract using tar (available on macOS/Linux/Windows 10+)
+  // On Windows with Git Bash, tar uses MSYS paths (/c/Users/...) not Windows paths (C:\Users\...)
+  const toMsys = (p) => p.replace(/\\/g, '/').replace(/^([A-Za-z]):/, (_, d) => `/${d.toLowerCase()}`);
+  const tarTmp = process.platform === 'win32' ? toMsys(tmpFile) : tmpFile;
+  const tarDest = process.platform === 'win32' ? toMsys(CACHE_DIR) : CACHE_DIR;
   try {
-    execFileSync('tar', ['xzf', tmpFile, '-C', CACHE_DIR], { stdio: 'pipe' });
+    execFileSync('tar', ['xzf', tarTmp, '-C', tarDest], { stdio: 'pipe' });
     if (!options.silent) {
       console.log(`  Extracted to ${CACHE_DIR}`);
     }

@@ -447,7 +447,7 @@ function tryPlayAudio(cacheId) {
     const voiceScript = require.resolve('./hogwarts-voice.js');
     const { execFile } = require('child_process');
     // Fire and forget — audio plays in the background, never blocks progress
-    execFile(process.execPath, [voiceScript, 'play-cached', cacheId], { timeout: 30000 }, () => {});
+    execFile(process.execPath, [voiceScript, 'play-cached', cacheId], { timeout: 180000 }, () => {});
   } catch (e) {
     // Voice not available — silently continue
   }
@@ -581,7 +581,7 @@ if (require.main === module) {
         const voiceScript = require.resolve('./hogwarts-voice.js');
         execFileSync(process.execPath, [voiceScript, 'play-cached', cacheId], {
           stdio: 'inherit',
-          timeout: 30000
+          timeout: 180000
         });
       } catch (e) {
         // Voice not available — silently continue

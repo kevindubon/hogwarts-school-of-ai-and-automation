@@ -258,7 +258,7 @@ async function playAudio(filePath) {
       args = [filePath];
     } else if (platform === 'win32') {
       cmd = 'powershell';
-      args = ['-c', `Add-Type -AssemblyName presentationCore; $p = New-Object System.Windows.Media.MediaPlayer; $p.Open('${filePath.replace(/'/g, "''")}'); $p.Play(); while($p.NaturalDuration.HasTimeSpan -eq $false){Start-Sleep -Milliseconds 100}; Start-Sleep -Seconds $p.NaturalDuration.TimeSpan.TotalSeconds; $p.Close()`];
+      args = ['-ExecutionPolicy', 'Bypass', '-File', path.join(SKILL_DIR, 'assets', 'play-audio.ps1'), filePath];
     } else {
       cmd = 'mpv';
       args = ['--no-video', '--really-quiet', filePath];
@@ -293,21 +293,32 @@ async function playAudioBackground(filePath) {
     await waitForAudioToFinish();
     await sleep(5000);
   }
-  const { spawn } = require('child_process');
   const platform = process.platform;
-  let cmd, args;
+  let cmd, cmdArgs;
   if (platform === 'darwin') {
     cmd = 'afplay';
-    args = [filePath];
+    cmdArgs = [filePath];
   } else if (platform === 'win32') {
     cmd = 'powershell';
-    args = ['-c', `Add-Type -AssemblyName presentationCore; $p = New-Object System.Windows.Media.MediaPlayer; $p.Open('${filePath.replace(/'/g, "''")}'); $p.Play(); while($p.NaturalDuration.HasTimeSpan -eq $false){Start-Sleep -Milliseconds 100}; Start-Sleep -Seconds $p.NaturalDuration.TimeSpan.TotalSeconds; $p.Close()`];
+    cmdArgs = ['-ExecutionPolicy', 'Bypass', '-File', path.join(SKILL_DIR, 'assets', 'play-audio.ps1'), filePath];
   } else {
     cmd = 'mpv';
-    args = ['--no-video', '--really-quiet', filePath];
+    cmdArgs = ['--no-video', '--really-quiet', filePath];
   }
-  const child = spawn(cmd, args, { detached: true, stdio: 'ignore' });
-  child.unref();
+  if (platform === 'win32') {
+    // On Windows, detached spawn kills audio when parent exits.
+    // Use foreground execFile so audio plays reliably.
+    return new Promise((resolve, reject) => {
+      execFile(cmd, cmdArgs, (error) => {
+        if (error) reject(error);
+        else resolve();
+      });
+    });
+  } else {
+    const { spawn } = require('child_process');
+    const child = spawn(cmd, cmdArgs, { detached: true, stdio: 'ignore' });
+    child.unref();
+  }
 }
 
 // --- Synthesis ---
